@@ -89,8 +89,10 @@ const map2 = result.map((incre) => parseInt(incre.age) + 1);
 console.log(map2);
 
 //REDUCE TO CALCULATE SUM OF AGES
-const sum1 = result.reduce((accumulator, currentValue) => (parseInt(accumulator.age) + parseInt(currentValue.age), 0));
+console.log("Using reduce function");
+const sum1 = result.reduce((sum, currentValue) => (sum + parseInt(currentValue.age)), 0);
 console.log(sum1);
+console.log("The Average after using reduce function " + (sum1/(result.length)));
 
 //PART3
 //THINK CRITICALLY
