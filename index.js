@@ -68,13 +68,37 @@ let array = ["bue","red","orange","green"];
 console.log("The strings longer than the given number " + longthannum(array, 4));
 
 //PRINT NUMBERS FROM 1 TO N USING RECURSION
-function printnum(num)
+function printnum(num1,n)
 {
-    if(num == 0)
+    if(num1 == n+1)
         return;
-    console.log(num);
-    return printnum(num-1);
+    console.log(num1);
+    return printnum(num1+1,n);
 }
-printnum(4);
+printnum(1,4);
 
+//PART2
+//THINKING METHODICALLY
+console.log("SORTING THE ARRAY BY AGE");
+let result = [{ id: "42", name: "Bruce", occupation: "Knight", age: "41" }, { id: "48", name: "Barry", occupation: "Runner", age: "25" }, { id: "57", name: "Bob", occupation: "Fry Cook", age: "19" }, { id: "63", name: "Blaine", occupation: "Quiz Master", age: "58" }, { id: "7", name: "Bilbo", occupation: "None", age: "111" }];
+result.sort((a,b) => a.age - b.age);
+console.log(result);
 
+//FILTER ARRAY TO REMOVE AGE GREATER THAN 50
+console.log("FILTERING THE ARRAY TO REMOVE AGE GREATER THAN 50");
+const filtered_array = result.filter((ages) => ages.age > 50)
+console.log(filtered_array);
+
+//MAP ARRAY TO PERFORM THE GIVEN CHANGES
+console.log("MAPPING ARRAY TO CHANGE KEY");
+const map1 = result.map(({"occupation":value}) => ({"job" : value}))
+console.log(map1);
+
+//MAP ARRAY TO INCREMENT AGE BY 1
+console.log("INCREMENTING AGE BY ONE");
+const map2 = result.map((incre) => parseInt(incre.age) + 1);
+console.log(map2);
+
+//REDUCE TO CALCULATE SUM OF AGES
+const sum1 = result.reduce((accumulator, currentValue ) => (parseInt(accumulator.age) + parseInt(currentValue.age),0));
+console.log(sum1);
